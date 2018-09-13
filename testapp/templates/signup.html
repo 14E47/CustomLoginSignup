@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block extrastyles %}
+    <style>
+    .flabel {
+        width: 200px;
+        text-align: right;
+    }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<div class="text-center">
+    <h2>WELCOME</h2>
+    <h3>PLEASE REGISTER</h3>
+    <br>
+    <form method="post">
+        {% csrf_token %}
+        {#                {{ form.as_p }}#}
+        <p>
+            <label class="flabel" for="id_username">Username:</label>
+            <input type="text" name="username" maxlength="150" autofocus required id="id_username"></p>
+        <p>
+            <label class="flabel" for="id_full_name">Full name:</label>
+            <input type="text" name="full_name" maxlength="50" required id="id_full_name"></p>
+        <p>
+            <label class="flabel" for="id_password1">Password:</label>
+            <input type="password" name="password1" required id="id_password1"></p>
+        <p>
+            <label class="flabel" for="id_password2">Password confirmation:</label>
+            <input type="password" name="password2" required id="id_password2"></p>
+        <p>
+            <label class="flabel" for="id_birth_date">Birth date [YYYY-MM-DD]:</label>
+            <input type="text" name="birth_date" required id="id_birth_date"></p>
+
+        <br>
+        <button type="submit" style="border-radius: 50px;padding: 5px 10px 5px 10px">REGISTER</button>
+    </form>
+
+
+</div>
+{% endblock %}

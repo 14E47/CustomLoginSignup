@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block extrastyles %}
+    <style>
+    .form>input {
+        border-radius: 5%;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<div class="text-center">
+    <h2>WELCOME</h2><br><br>
+    <h3>PLEASE LOGIN:</h3>
+    <form action="/accounts/login/" method="post">
+        {% csrf_token %}
+        <br>
+{#        {{ form.as_p }}#}
+
+        <p><label for="id_username">Username:</label> <input type="text" name="username" autofocus required id="id_username"></p>
+        <p><label for="id_password">Password:</label> <input type="password" name="password" required id="id_password"></p>
+
+        <br>
+        <button type="submit" style="border-radius: 50px;padding: 5px 10px 5px 10px">LOGIN</button>
+    </form>
+    <hr width="300px">
+    <h3>NEW USER ? <span><a href="/signup/"> REGISTER</a></span></h3>
+</div>
+{% endblock %}

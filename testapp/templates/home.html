@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="text-center">
+        <br><br>
+        <h1>DFT</h1><br>
+        <h2> Test Login/Signup Application</h2>
+
+        {% if user.is_authenticated %}
+            <h4> Hello, You're logged In</h4>
+            <br>
+            <h3><a href="/accounts/logout/">LOGOUT</a></h3>
+        {% else %}
+            <br>
+            <h4><a href="/accounts/login/">LOGIN TO CONTINUE</a></h4>
+        {% endif %}
+    </div>
+{% endblock %}
