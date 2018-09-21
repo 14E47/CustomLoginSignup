@@ -1,3 +1,3 @@
 # CustomLoginSignup
 
-Simple login, signup application with signup fields.
+Simple login, signup application with custom signup fields.
